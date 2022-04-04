@@ -1,0 +1,9 @@
+---
+- name: "consul | main | Include OS-specific variables."
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: "consul | main | Installing pre dependencies of xorg-server"
+  include: "{{ ansible_os_family }}.yml"
+
+- name: "consul | main | consul"
+  include: "consul.yml"
